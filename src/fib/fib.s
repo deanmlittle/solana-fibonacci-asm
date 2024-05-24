@@ -26,10 +26,6 @@ overflow:
     call sol_log_
     exit
 finalize:
-    lddw r2, 0
-    lddw r3, 0
-    lddw r4, 0
-    lddw r5, 0
     call sol_log_64_
     exit
 .extern sol_log_ sol_log_64_
