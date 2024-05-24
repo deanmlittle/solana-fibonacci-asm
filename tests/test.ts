@@ -1,7 +1,7 @@
-import { AccountMeta, ComputeBudgetProgram, Connection, Keypair, Transaction, TransactionInstruction, TransactionInstructionCtorFields } from "@solana/web3.js"
+import { ComputeBudgetProgram, Connection, Keypair, Transaction, TransactionInstruction, TransactionInstructionCtorFields } from "@solana/web3.js"
 const signerSeed = JSON.parse(process.env.SIGNER)
 import programSeed from "../deploy/fib_keypair.json"
-import { assert, expect } from "chai"
+import { assert } from "chai"
 const programKeypair = Keypair.fromSecretKey(new Uint8Array(programSeed))
 
 const program = programKeypair.publicKey
