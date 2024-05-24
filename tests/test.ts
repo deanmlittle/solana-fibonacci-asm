@@ -27,7 +27,6 @@ const getLogs = async (signature: string): Promise<string[]> => {
         signature,
         { commitment: "confirmed" }
     )
-    console.log(tx.meta.computeUnitsConsumed, "CUs")
     return tx.meta.logMessages
 }
 

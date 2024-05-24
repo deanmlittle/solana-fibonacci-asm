@@ -6,15 +6,14 @@ e:
     mov64 r7, 1 // Skip first sequence and return 0 if n<1
     jgt r8, 93, overflow // handle overflow
     jlt r8, 2, exceptions // handle 1 and 0
-    sub64 r8, 1 // Subtract one as we have pre-solved for f(2)
     ja step
 step:
+    sub64 r8, 1  // -1 from r8 - subtract first as we already pre-calculated f(1)
     jlt r8, 1, finalize // If there are <1 rounds left, finish it
     mov64 r1, r7 // set to f(n-1)
     add64 r1, r6 // add f(n-2)
     mov64 r6, r7 // set f(n-2) to f(n-1)
     mov64 r7, r1 // set f(n-1) to f(n)
-    sub64 r8, 1  // -1 from r8
     ja step
 exceptions:
     mov64 r1, r8 // 0 = 0 and 1 = 1
